@@ -18,6 +18,9 @@ shell:
 		-w /go/src/sigs.k8s.io/cluster-addons/installer \
 		-u $(shell id -u):$(shell id -g) \
 		-e GO111MODULE=on \
+		-e GOOS=darwin \
+		-e GOARCH=amd64 \
+		-e CGO_ENABLED=0 \
 		golang:1.11 \
 		$(COMMAND)
 
